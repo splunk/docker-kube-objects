@@ -1,4 +1,4 @@
-FROM fluent/fluentd:v1.1.0
+FROM fluent/fluentd:v1.2.0
 
 LABEL maintainer="Gimi Liang <zliang@splunk.com>"
 
@@ -7,11 +7,11 @@ COPY *.gem /tmp/
 
 RUN apk update \
  && apk upgrade \
- && apk add --no-cache jq-dev \
+ && apk add --no-cache jq \
  && apk add --no-cache --virtual .build-deps \
         build-base \
         ruby-dev \
- && gem install fluent-plugin-jq \
+ && gem install fluent-plugin-jq -v 0.5.1 \
  && gem install /tmp/*.gem \
  && apk del .build-deps \
  && rm -rf /var/cache/apk/* \

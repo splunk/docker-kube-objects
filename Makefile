@@ -1,4 +1,4 @@
-VERSION ?= 0.0.6
+VERSION ?= 0.2.0
 IMAGE_NAME ?= splunk-kubernetes-objects:${VERSION}
 TARGET_NAME ?= gimil/k8s-o:${VERSION}
 
